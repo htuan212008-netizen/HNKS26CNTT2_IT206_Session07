@@ -1,129 +1,78 @@
-1. Prompt dùng để xử lý từng phần tài liệu (Xử lý theo từng chương / chunk logic)
-Bạn là Chuyên viên Nhân sự Cấp cao tại Công ty ABC Technology. Nhiệm vụ của bạn là đọc và trích xuất chính xác nội dung của MỘT phần/chương tài liệu nội bộ được cung cấp nhằm phục vụ công tác chuẩn bị buổi hướng dẫn nhân viên mới (onboarding) và tổng hợp dữ liệu.
-
---- NGUYÊN TẮC BẮT BUỘC ---
-1. Tuyệt đối KHÔNG tự suy đoán, diễn giải mở rộng hoặc bổ sung quy định không xuất hiện trực tiếp trong đoạn văn bản được cung cấp.
-2. Giữ NGUYÊN mọi con số, mốc thời gian, thời hạn, tỷ lệ phần trăm, hệ số và điều kiện áp dụng có trong văn bản.
-3. KHÔNG được bỏ qua các trường hợp ngoại lệ, điều kiện loại trừ hoặc lưu ý đặc biệt.
-4. Phân biệt rõ ràng giữa thông tin CÓ trong phần tài liệu này và thông tin KHÔNG được đề cập / chưa rõ trong phần này.
-5. Lưu lại "Bản ghi nhớ thông tin cốt lõi (State Memory)" ở cuối phần xử lý để phục vụ đối chiếu chéo ở các bước sau.
-
---- CẤU TRÚC ĐẦU RA CHO TỪNG PHẦN ---
-### A. Thông tin phần đang xử lý
-- Tên chương / Phần nội dung: ...
-- Phạm vi trang/mục (nếu có): ...
-
-### B. Tóm tắt quy định theo cấu trúc thống nhất
-1. Quy định cốt lõi & Con số/Thời hạn/Tỷ lệ quan trọng: ...
-2. Điều kiện áp dụng: ...
-3. Các trường hợp ngoại lệ / Điều kiện đặc biệt: ...
-4. Thông tin chưa được đề cập / Còn bỏ ngỏ trong phần này: ...
-
-### C. Bảng trích xuất nhanh của phần
-| Chủ đề | Quy định chính | Điều kiện áp dụng | Ngoại lệ |
-| :--- | :--- | :--- | :--- |
-| ... | ... | ... | ... |
-
-### D. Bản ghi nhớ thông tin cốt lõi (Lưu cho bước tổng hợp)
-- Các quy định/mốc số có thể liên quan đến chương khác (nghỉ phép, làm thêm giờ, đánh giá, khen thưởng/kỷ luật, nội quy): ...
-- Các điểm cần kiểm tra tính nhất quán khi ghép nối toàn bộ 5 chương: ...
-
---- NỘI DUNG TÀI LIỆU ĐẦU VÀO ---
-[Dán nội dung của từng chương/phần tài liệu vào đây]
-2. Prompt dùng để tổng hợp các phần & Kiểm tra tính toàn vẹn
-Bạn là Chuyên viên Nhân sự Cấp cao tại Công ty ABC Technology. Bạn đã nhận được các bản tóm tắt chuẩn hóa từ 5 chương của bộ tài liệu nội bộ (Nội quy lao động; Quy định nghỉ phép; Chính sách làm thêm giờ; Quy định đánh giá nhân viên; Chính sách khen thưởng và kỷ luật).
-
-Nhiệm vụ của bạn là thực hiện đầy đủ các công việc sau:
-1. Tổng hợp toàn bộ các bản tóm tắt thành một tài liệu hoàn chỉnh, mạch lạc, độ dài khoảng 1.000 – 1.500 từ.
-2. Lập bảng tổng hợp gồm đúng 4 cột: Chủ đề | Quy định chính | Điều kiện áp dụng | Ngoại lệ.
-3. Phát hiện và chỉ rõ các nội dung có liên quan / giao thoa / phụ thuộc lẫn nhau giữa các chương.
-4. Kiểm tra và đối chiếu xem bản tổng hợp có bị bỏ sót thông tin quan trọng nào từ các bản tóm tắt đầu vào hay không.
-5. Phân biệt rõ ràng những nội dung CÓ trong tài liệu với những nội dung KHÔNG được đề cập trong tài liệu (tuyệt đối không tự bịa đặt).
-
---- RÀNG BUỘC DỮ LIỆU ---
-- Giữ nguyên tuyệt đối mọi con số, thời hạn, tỷ lệ, điều kiện và ngoại lệ.
-- Không bỏ qua trường hợp ngoại lệ.
-- Không suy đoán quy định ngoài tài liệu.
-
---- ĐỊNH DẠNG ĐẦU RA ---
-1. Bảng tổng hợp (4 cột: Chủ đề, Quy định chính, Điều kiện áp dụng, Ngoại lệ).
-2. Bản tóm tắt hoàn chỉnh (khoảng 1.000 – 1.500 từ, chia mục rõ ràng cho 5 chương và phần liên kết giữa các chương).
-3. Phân tích liên kết giữa các chương.
-4. Báo cáo kiểm tra mức độ đầy đủ & rà soát thông tin bị bỏ sót / chưa được đề cập.
-
---- DỮ LIỆU TÓM TẮT CÁC PHẦN ĐẦU VÀO ---
-[Dán toàn bộ kết quả tóm tắt của 5 chương vào đây]
-
-3. Bảng tổng hợp (Mẫu cấu trúc 4 cột cho 5 chương)
+1. Prompt xử lý từng phần tài liệu
+```
+Bạn là trợ lý HR tổng hợp tài liệu nội bộ Công ty ABC Technology.
+Chỉ sử dụng đúng nội dung trong [PHẦN TÀI LIỆU ĐƯỢC CUNG CẤP]. Tuyệt đối không suy đoán, không thêm thông tin ngoài tài liệu.
+Hãy tóm tắt phần này theo cấu trúc:
+1. Mục tiêu & phạm vi chương
+2. Các quy định chính (giữ nguyên số liệu, thời hạn, tỷ lệ, điều kiện)
+3. Trường hợp ngoại lệ
+4. Thông tin quan trọng cần lưu giữ cho bước tổng hợp
+Nếu mục nào không có trong phần này, ghi rõ "Không đề cập trong phần này".
+[PHẦN TÀI LIỆU ĐƯỢC CUNG CẤP]: <dán nội dung từng chương/phần>
+```
+2. Prompt tổng hợp các phần
+```
+Bạn là trợ lý HR tổng hợp tài liệu quy định nhân sự (5 chương, 120 trang) của Công ty ABC Technology.
+Chỉ sử dụng đúng các bản tóm tắt từng phần đã cung cấp. Tuyệt đối không suy đoán hoặc tự bịa quy định.
+Hãy thực hiện:
+1. Lập bảng tổng hợp gồm đúng 4 cột: Chủ đề | Quy định chính | Điều kiện áp dụng | Ngoại lệ.
+2. Viết bản tóm tắt hoàn chỉnh dài khoảng 1.000–1.500 từ, bám sát số liệu, thời hạn, tỷ lệ, điều kiện và ngoại lệ.
+3. Chỉ ra các liên kết/mối liên hệ giữa các chương và kiểm tra thông tin có thể bị bỏ sót.
+4. Phân biệt rõ: [Có trong tài liệu] và [Chưa được đề cập / Chưa có trong phần đã xử lý].
+[CÁC BẢN TÓM TẮT TỪNG PHẦN]: <dán bản tóm tắt các phần>
+```
+3. Bảng tổng hợp
 
 | Chủ đề | Quy định chính | Điều kiện áp dụng | Ngoại lệ |
 | :--- | :--- | :--- | :--- |
-| **Nội quy lao động** *(Chương 1)* | Quy định về giờ làm việc, tác phong, kỷ luật làm việc, bảo mật thông tin và tuân thủ nội quy tại ABC Technology *(điền chính xác con số giờ/phút/mốc thời gian từ tài liệu)*. | Áp dụng cho toàn thể nhân sự thuộc ABC Technology theo phạm vi quy định của chương. | Các trường hợp ngoại lệ / đặc thù được ghi nhận trực tiếp trong tài liệu *(không tự suy diễn nếu thiếu)*. |
-| **Quy định nghỉ phép** *(Chương 2)* | Quy định về các loại nghỉ phép, số ngày phép, thủ tục đăng ký/duyệt nghỉ phép và quy tắc giải quyết phép tồn *(điền chính xác số ngày/thời hạn từ tài liệu)*. | Áp dụng khi nhân viên đáp ứng đủ điều kiện theo quy định từng loại phép trong tài liệu. | Các trường hợp ngoại lệ hoặc điều kiện đặc biệt nêu trong tài liệu. |
-| **Chính sách làm thêm giờ (OT)** *(Chương 3)* | Quy định về điều kiện làm thêm giờ, giới hạn thời gian làm thêm, cách tính lương/đãi ngộ OT và quy trình phê duyệt *(điền chính xác tỷ lệ/hệ số/giới hạn giờ từ tài liệu)*. | Áp dụng khi có phát sinh nhu cầu làm thêm giờ theo quy định và có phê duyệt hợp lệ. | Các trường hợp ngoại lệ hoặc đặc thù theo quy định trong tài liệu. |
-| **Quy định đánh giá nhân viên** *(Chương 4)* | Quy định về chu kỳ đánh giá, tiêu chí đánh giá, thang điểm/xếp loại và quy trình phản hồi kết quả đánh giá *(điền chính xác chu kỳ/tỷ trọng/mốc thời gian từ tài liệu)*. | Áp dụng cho nhân sự trong kỳ đánh giá theo quy định của chương. | Các trường hợp ngoại lệ (ví dụ: nhân sự mới/thử việc hoặc trường hợp đặc biệt nếu có trong tài liệu). |
-| **Chính sách khen thưởng và kỷ luật** *(Chương 5)* | Quy định về các hình thức khen thưởng, tiêu chuẩn xét thưởng, các hành vi vi phạm và hình thức kỷ luật tương ứng *(điền chính xác mức thưởng/mức kỷ luật/thời hiệu từ tài liệu)*. | Áp dụng dựa trên kết quả đóng góp hoặc mức độ vi phạm được xác định theo quy trình. | Các trường hợp ngoại lệ hoặc tình tiết giảm nhẹ/đặc biệt nếu được nêu trong tài liệu. |1. Prompt dùng để xử lý từng phần tài liệu (Xử lý theo từng chương / chunk logic)
-Bạn là Chuyên viên Nhân sự Cấp cao tại Công ty ABC Technology. Nhiệm vụ của bạn là đọc và trích xuất chính xác nội dung của MỘT phần/chương tài liệu nội bộ được cung cấp nhằm phục vụ công tác chuẩn bị buổi hướng dẫn nhân viên mới (onboarding) và tổng hợp dữ liệu.
+| Nội quy lao động | [Chưa được đề cập — điền từ tài liệu gốc] | [Chưa được đề cập — điền từ tài liệu gốc] | [Chưa được đề cập — điền từ tài liệu gốc] |
+| Quy định nghỉ phép | [Chưa được đề cập — điền từ tài liệu gốc] | [Chưa được đề cập — điền từ tài liệu gốc] | [Chưa được đề cập — điền từ tài liệu gốc] |
+| Chính sách làm thêm giờ | [Chưa được đề cập — điền từ tài liệu gốc] | [Chưa được đề cập — điền từ tài liệu gốc] | [Chưa được đề cập — điền từ tài liệu gốc] |
+| Quy định đánh giá nhân viên | [Chưa được đề cập — điền từ tài liệu gốc] | [Chưa được đề cập — điền từ tài liệu gốc] | [Chưa được đề cập — điền từ tài liệu gốc] |
+| Chính sách khen thưởng và kỷ luật | [Chưa được đề cập — điền từ tài liệu gốc] | [Chưa được đề cập — điền từ tài liệu gốc] | [Chưa được đề cập — điền từ tài liệu gốc] |
+4. Bản tóm tắt hoàn chỉnh (~1.000–1.500 từ)
+```
+Tài liệu quy định nhân sự nội bộ của Công ty ABC Technology gồm 5 chương, tổng cộng 120 trang, phục vụ chuẩn bị cho buổi hướng dẫn nhân viên mới. Tài liệu gồm 5 mảng: Nội quy lao động, Quy định nghỉ phép, Chính sách làm thêm giờ, Quy định đánh giá nhân viên, và Chính sách khen thưởng và kỷ luật. Vì vượt quá Context Window nếu xử lý một lần, tài liệu cần được chia theo phần logic, xử lý riêng từng chương, giữ nguyên con số, thời hạn, tỷ lệ, điều kiện, ngoại lệ, không suy đoán và phân biệt rõ [Có trong tài liệu] với [Chưa được đề cập].
 
---- NGUYÊN TẮC BẮT BUỘC ---
-1. Tuyệt đối KHÔNG tự suy đoán, diễn giải mở rộng hoặc bổ sung quy định không xuất hiện trực tiếp trong đoạn văn bản được cung cấp.
-2. Giữ NGUYÊN mọi con số, mốc thời gian, thời hạn, tỷ lệ phần trăm, hệ số và điều kiện áp dụng có trong văn bản.
-3. KHÔNG được bỏ qua các trường hợp ngoại lệ, điều kiện loại trừ hoặc lưu ý đặc biệt.
-4. Phân biệt rõ ràng giữa thông tin CÓ trong phần tài liệu này và thông tin KHÔNG được đề cập / chưa rõ trong phần này.
-5. Lưu lại "Bản ghi nhớ thông tin cốt lõi (State Memory)" ở cuối phần xử lý để phục vụ đối chiếu chéo ở các bước sau.
+Chương 1 – Nội quy lao động: [Có trong tài liệu: tên chủ đề và phạm vi chương 1]. Chi tiết quy định, điều kiện áp dụng và ngoại lệ: [Chưa được đề cập trong đề bài — điền từ file 120 trang].
 
---- CẤU TRÚC ĐẦU RA CHO TỪNG PHẦN ---
-### A. Thông tin phần đang xử lý
-- Tên chương / Phần nội dung: ...
-- Phạm vi trang/mục (nếu có): ...
+Chương 2 – Quy định nghỉ phép: [Có trong tài liệu: tên chủ đề và phạm vi chương 2]. Chi tiết số ngày, thời hạn, tỷ lệ, điều kiện áp dụng và ngoại lệ: [Chưa được đề cập trong đề bài — điền từ file 120 trang].
 
-### B. Tóm tắt quy định theo cấu trúc thống nhất
-1. Quy định cốt lõi & Con số/Thời hạn/Tỷ lệ quan trọng: ...
-2. Điều kiện áp dụng: ...
-3. Các trường hợp ngoại lệ / Điều kiện đặc biệt: ...
-4. Thông tin chưa được đề cập / Còn bỏ ngỏ trong phần này: ...
+Chương 3 – Chính sách làm thêm giờ: [Có trong tài liệu: tên chủ đề và phạm vi chương 3]. Chi tiết giới hạn giờ, tỷ lệ, điều kiện áp dụng và ngoại lệ: [Chưa được đề cập trong đề bài — điền từ file 120 trang].
 
-### C. Bảng trích xuất nhanh của phần
-| Chủ đề | Quy định chính | Điều kiện áp dụng | Ngoại lệ |
-| :--- | :--- | :--- | :--- |
-| ... | ... | ... | ... |
+Chương 4 – Quy định đánh giá nhân viên: [Có trong tài liệu: tên chủ đề và phạm vi chương 4]. Chi tiết chu kỳ, tiêu chí, điều kiện áp dụng và ngoại lệ: [Chưa được đề cập trong đề bài — điền từ file 120 trang].
 
-### D. Bản ghi nhớ thông tin cốt lõi (Lưu cho bước tổng hợp)
-- Các quy định/mốc số có thể liên quan đến chương khác (nghỉ phép, làm thêm giờ, đánh giá, khen thưởng/kỷ luật, nội quy): ...
-- Các điểm cần kiểm tra tính nhất quán khi ghép nối toàn bộ 5 chương: ...
+Chương 5 – Chính sách khen thưởng và kỷ luật: [Có trong tài liệu: tên chủ đề và phạm vi chương 5]. Chi tiết hình thức, mức độ, điều kiện áp dụng và ngoại lệ: [Chưa được đề cập trong đề bài — điền từ file 120 trang].
 
---- NỘI DUNG TÀI LIỆU ĐẦU VÀO ---
-[Dán nội dung của từng chương/phần tài liệu vào đây]
-2. Prompt dùng để tổng hợp các phần & Kiểm tra tính toàn vẹn
-Bạn là Chuyên viên Nhân sự Cấp cao tại Công ty ABC Technology. Bạn đã nhận được các bản tóm tắt chuẩn hóa từ 5 chương của bộ tài liệu nội bộ (Nội quy lao động; Quy định nghỉ phép; Chính sách làm thêm giờ; Quy định đánh giá nhân viên; Chính sách khen thưởng và kỷ luật).
+Liên kết giữa các chương: các quy định cùng áp dụng cho nhân sự công ty và liên quan lẫn nhau trong vận hành, theo dõi công/hiệu suất, đánh giá và khen thưởng/kỷ luật (chi tiết cụ thể: [Chưa được đề cập trong đề bài]). Kiểm tra bỏ sót: cần rà soát đủ số liệu, thời hạn, tỷ lệ, điều kiện và ngoại lệ ở từng chương khi chạy trên file 120 trang; toàn bộ chi tiết cụ thể bên trong 5 chương hiện [Chưa được đề cập] trong nội dung đề bài.
+```
+5. Câu hỏi kiểm tra thông tin
+Tài liệu của ABC Technology có mấy chương và tổng cộng bao nhiêu trang?
 
-Nhiệm vụ của bạn là thực hiện đầy đủ các công việc sau:
-1. Tổng hợp toàn bộ các bản tóm tắt thành một tài liệu hoàn chỉnh, mạch lạc, độ dài khoảng 1.000 – 1.500 từ.
-2. Lập bảng tổng hợp gồm đúng 4 cột: Chủ đề | Quy định chính | Điều kiện áp dụng | Ngoại lệ.
-3. Phát hiện và chỉ rõ các nội dung có liên quan / giao thoa / phụ thuộc lẫn nhau giữa các chương.
-4. Kiểm tra và đối chiếu xem bản tổng hợp có bị bỏ sót thông tin quan trọng nào từ các bản tóm tắt đầu vào hay không.
-5. Phân biệt rõ ràng những nội dung CÓ trong tài liệu với những nội dung KHÔNG được đề cập trong tài liệu (tuyệt đối không tự bịa đặt).
+Trả lời: 5 chương, tổng cộng 120 trang.
 
---- RÀNG BUỘC DỮ LIỆU ---
-- Giữ nguyên tuyệt đối mọi con số, thời hạn, tỷ lệ, điều kiện và ngoại lệ.
-- Không bỏ qua trường hợp ngoại lệ.
-- Không suy đoán quy định ngoài tài liệu.
+Vị trí: Phần 1. Bối cảnh vấn đề.
 
---- ĐỊNH DẠNG ĐẦU RA ---
-1. Bảng tổng hợp (4 cột: Chủ đề, Quy định chính, Điều kiện áp dụng, Ngoại lệ).
-2. Bản tóm tắt hoàn chỉnh (khoảng 1.000 – 1.500 từ, chia mục rõ ràng cho 5 chương và phần liên kết giữa các chương).
-3. Phân tích liên kết giữa các chương.
-4. Báo cáo kiểm tra mức độ đầy đủ & rà soát thông tin bị bỏ sót / chưa được đề cập.
+5 nội dung được quy định trong tài liệu gồm những gì?
 
---- DỮ LIỆU TÓM TẮT CÁC PHẦN ĐẦU VÀO ---
-[Dán toàn bộ kết quả tóm tắt của 5 chương vào đây]
+Trả lời: Nội quy lao động; Quy định nghỉ phép; Chính sách làm thêm giờ; Quy định đánh giá nhân viên; Chính sách khen thưởng và kỷ luật.
 
-3. Bảng tổng hợp (Mẫu cấu trúc 4 cột cho 5 chương)
+Vị trí: Phần 1. Bối cảnh vấn đề.
 
-| Chủ đề | Quy định chính | Điều kiện áp dụng | Ngoại lệ |
-| :--- | :--- | :--- | :--- |
-| **Nội quy lao động** *(Chương 1)* | Quy định về giờ làm việc, tác phong, kỷ luật làm việc, bảo mật thông tin và tuân thủ nội quy tại ABC Technology *(điền chính xác con số giờ/phút/mốc thời gian từ tài liệu)*. | Áp dụng cho toàn thể nhân sự thuộc ABC Technology theo phạm vi quy định của chương. | Các trường hợp ngoại lệ / đặc thù được ghi nhận trực tiếp trong tài liệu *(không tự suy diễn nếu thiếu)*. |
-| **Quy định nghỉ phép** *(Chương 2)* | Quy định về các loại nghỉ phép, số ngày phép, thủ tục đăng ký/duyệt nghỉ phép và quy tắc giải quyết phép tồn *(điền chính xác số ngày/thời hạn từ tài liệu)*. | Áp dụng khi nhân viên đáp ứng đủ điều kiện theo quy định từng loại phép trong tài liệu. | Các trường hợp ngoại lệ hoặc điều kiện đặc biệt nêu trong tài liệu. |
-| **Chính sách làm thêm giờ (OT)** *(Chương 3)* | Quy định về điều kiện làm thêm giờ, giới hạn thời gian làm thêm, cách tính lương/đãi ngộ OT và quy trình phê duyệt *(điền chính xác tỷ lệ/hệ số/giới hạn giờ từ tài liệu)*. | Áp dụng khi có phát sinh nhu cầu làm thêm giờ theo quy định và có phê duyệt hợp lệ. | Các trường hợp ngoại lệ hoặc đặc thù theo quy định trong tài liệu. |
-| **Quy định đánh giá nhân viên** *(Chương 4)* | Quy định về chu kỳ đánh giá, tiêu chí đánh giá, thang điểm/xếp loại và quy trình phản hồi kết quả đánh giá *(điền chính xác chu kỳ/tỷ trọng/mốc thời gian từ tài liệu)*. | Áp dụng cho nhân sự trong kỳ đánh giá theo quy định của chương. | Các trường hợp ngoại lệ (ví dụ: nhân sự mới/thử việc hoặc trường hợp đặc biệt nếu có trong tài liệu). |
-| **Chính sách khen thưởng và kỷ luật** *(Chương 5)* | Quy định về các hình thức khen thưởng, tiêu chuẩn xét thưởng, các hành vi vi phạm và hình thức kỷ luật tương ứng *(điền chính xác mức thưởng/mức kỷ luật/thời hiệu từ tài liệu)*. | Áp dụng dựa trên kết quả đóng góp hoặc mức độ vi phạm được xác định theo quy trình. | Các trường hợp ngoại lệ hoặc tình tiết giảm nhẹ/đặc biệt nếu được nêu trong tài liệu. |
+Yêu cầu đầu vào và nguyên tắc xử lý dữ liệu là gì?
+
+Trả lời: 01 file PDF hoặc DOCX tối thiểu 50 trang; không suy đoán quy định ngoài tài liệu; xử lý riêng từng chương; giữ nguyên con số, thời hạn, tỷ lệ, điều kiện; không bỏ qua ngoại lệ; phân biệt rõ thông tin có trong tài liệu và chưa được đề cập.
+
+Vị trí: Phần 2. Ràng buộc dữ liệu.
+
+Chi tiết cụ thể về quy định, điều kiện và ngoại lệ của 5 chương đã có trong đề bài chưa?
+
+Trả lời: Chưa được đề cập trong đề bài; cần trích từ tài liệu gốc 120 trang khi xử lý từng phần.
+
+Vị trí: Phần 1. Bối cảnh vấn đề & Phần 2. Ràng buộc dữ liệu.
+
+Những bước nghiệp vụ nào cần thực hiện với AI?
+
+Trả lời: Chia tài liệu thành phần logic; tóm tắt từng phần theo cấu trúc thống nhất; lưu thông tin quan trọng sau mỗi lần xử lý; tổng hợp thành tài liệu hoàn chỉnh; phát hiện liên kết giữa các chương; kiểm tra thông tin bị bỏ sót.
+
+Vị trí: Phần 3. Yêu cầu nghiệp vụ.
